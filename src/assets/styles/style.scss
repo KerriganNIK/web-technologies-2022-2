@@ -1,15 +1,70 @@
-@import "./global.css";
-@import "./fonts.css";
-@import "./utils.css";
+@import "global.css";
+@import "fonts.css";
+@import "utils.css";
 
 $color-blue: #2D66EE;
 $color-gray: #F2F4F7;
 $margins: 108px;
+
+//1. Header Block
+//2. Main Block
+//3. Full development Block
+//4. More than 100 Block
+//5. I-teka Block
+//6. Let's discuss Block
+//7. Development Block
+//8. Our team
+//9. Get_book Block
+//10. FAQ
+//11. Footer Block
+//12. Spite Block
+
+
 body{
   margin: 0;
   padding-bottom: 48px;
+  background-color: white;
+  @media screen and (max-width: 768px){
+    padding-bottom: 0;
+  }
+
+  @media screen and (max-width: 425px){
+    padding-bottom: 0;
+  }
 }
-//Шапка
+
+span{
+  color: $color-blue;
+}
+
+button{
+  padding: 11px 24px;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  background-color: $color-blue;
+}
+
+input{
+  border: none;
+  border-bottom: 1px solid #D0D5DD;
+  background-color: transparent;
+  transition: 0.3s;
+  outline: none;
+  display: inline;
+  font-size: 17px;
+}
+
+
+.wrapper{
+  background-color: $color-gray;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+//1. Header Block
 .header_burger{
   display: none;
 
@@ -29,7 +84,6 @@ body{
     right: 50px;
   }
 }
-
 
 header{
   display: flex;
@@ -53,6 +107,7 @@ header{
     max-width: 100%;
     margin-left: auto;
     justify-content: center;
+    display: flex;
   }
   @media screen and (max-width: 425px){
     max-width: 100%;
@@ -143,14 +198,10 @@ header{
   color: $color-blue;
 }
 
-//Первый блок
-span{
-  color: $color-blue;
-}
+//2. Main Block
 
 .main-banner{
   padding-top: 120px;
-  background-color: $color-gray;
   height: 1000px;
   overflow: hidden;
 
@@ -215,19 +266,37 @@ span{
   }
 }
 
-.name_block{
+.name_block_info{
   padding-top: 34px;
   padding-bottom: 26px;
-  display: flex;
-  justify-content: flex-start;
+  height: 120px;
+  display: grid;
+  grid-template-columns: repeat(1, 120.49px);
+  button{
+    position: relative;
+    left: 500px;
+    bottom: 94px;
+
+    @media screen and (max-width: 768px){
+      left: 0;
+      top: 50px;
+      width: 150px;
+      br{
+        display: none;
+      }
+    }
+  }
 }
 
-.name_block button{
-  padding: 11px 24px;
-  border: none;
-  border-radius: 8px;
-  text-align: left;
-  background-color: $color-blue;
+.name_block2{
+  position: relative;
+  left: 250px;
+  bottom: 43px;
+
+  @media screen and (max-width: 768px){
+    left: 0;
+    top: 20px;
+  }
 }
 
 .button_text_consultation{
@@ -248,61 +317,19 @@ span{
 }
 
 .input_name{
-  position: relative;
-  right: 90px;
-  top: 20px;
-  height: 23px;
-
-  border: none;
-  border-bottom: 1px solid #D0D5DD;
-  background-color: transparent;
-  transition: 0.3s;
-  outline: none;
-  display: inline;
-  font-size: 17px;
-
   &:focus{
     border-bottom: 1px solid $color-blue;
-  }
-
-  @media screen and (max-width: 768px){
-    top: 40px;
-    right: 46px;
   }
 }
 
 .label_fname{
   color: #667085;
   font-size: 13px;
-
-  @media screen and (max-width: 768px){
-    position: relative;
-    top: 80px;
-    right: 260px;
-  }
 }
 
 .input_fname{
-  position: relative;
-  right: 60px;
-  top: 20px;
-  height: 23px;
-
-  border: none;
-  border-bottom: 1px solid #D0D5DD;
-  background-color: transparent;
-  transition: 0.3s;
-  outline: none;
-  font-size: 17px;
-
   &:focus{
     border-bottom: 1px solid $color-blue;
-  }
-
-  @media screen and (max-width: 768px){
-    position: relative;
-    top: 120px;
-    right: 300px;
   }
 }
 
@@ -376,7 +403,7 @@ span{
   }
 }
 
-//второй блок
+//3. Full development Block
 .development-technologies{
   h1{
     font-size: 36px;
@@ -467,6 +494,7 @@ span{
   padding-bottom: 80px;
   display: flex;
   align-items: center;
+  background-color: white;
 
   @media screen and (max-width: 768px){
     padding-bottom: 150px;
@@ -477,15 +505,980 @@ span{
   }
 }
 
+//4. More than 100 Block
+.industries_content{
+  height: 480px;
+  h1{
+    margin-left: $margins;
+    font-size: 36px;
+    padding-top: 50px;
+
+    @media screen and (max-width: 768px){
+      margin-left: 17px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    height: 600px;
+  }
+
+  @media screen and (max-width: 425px){
+    height: 650px;
+  }
+}
+
+.industries_list{
+  display: grid;
+  grid-template-columns: repeat(3, 500.49px);
+  margin-left: $margins;
+
+  @media screen and (max-width: 768px){
+    margin-left: 17px;
+    grid-template-columns: repeat(2, 500.49px);
+  }
+
+  @media screen and (max-width: 425px){
+    margin-left: 17px;
+    grid-template-columns: repeat(2, 200.49px);
+  }
+}
+
+.project{
+  display: flex;
+  p{
+    margin-left: 16px;
+  }
+}
+
+//5. I-teka Block
+.main_h1{
+  font-size: 36px;
+  font-family: 'Inter', sans-serif;
+  padding-top: 30px;
+}
+
+.example{
+  height: 550px;
+
+  @media screen and (max-width: 425px){
+    height: 650px;
+  }
+}
+
+.projects_examples{
+  h1{
+    margin-left: $margins;
+
+    @media screen and (max-width: 768px){
+      margin-left: 38px;
+    }
+
+    @media screen and (max-width: 425px){
+      margin-left: 16px;
+    }
+  }
+
+  p{
+    margin-left: $margins;
+
+    @media screen and (max-width: 768px){
+      margin-left: 38px;
+    }
+
+    @media screen and (max-width: 425px){
+      margin-left: 16px;
+    }
+  }
+}
+
+.projects_list{
+  padding-top: 50px;
+  margin-left: $margins;
+
+  @media screen and (max-width: 768px){
+    margin-left: 18px;
+  }
+
+  @media screen and (max-width: 425px){
+    padding-top: 0;
+    padding-bottom: 150px;
+    margin-left: -16px;
+  }
+}
+
+.projects_list li{
+  list-style-type: none;
+  display: inline;
+  padding: 20px;
+  a{
+    color: black;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    &:hover{
+      border-bottom: 2px solid $color-blue;
+    }
+
+    @media screen and (max-width: 768px){
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    padding: 10px;
+  }
+}
+
+#button_left{
+  padding-left: 176px;
+
+  @media screen and (max-width: 768px){
+    padding-left: 462px;
+    position: relative;
+    top: 40px;
+  }
+
+  @media screen and (max-width: 425px){
+    padding-left: 20%;
+    position: relative;
+    top: 800px;
+  }
+}
+
+.text_gray{
+  color: #475467;
+}
+
+.address_block{
+  display: flex;
+  align-items: center;
+  margin-left: 65px;
+  span{
+    color: black;
+    font-size: 15px;
+  }
+
+  @media screen and (max-width: 768px){
+    margin-left: 0;
+  }
+
+  @media screen and (max-width: 425px){
+    margin-left: -20px;
+  }
+}
+
+.address_block li{
+  list-style-type: none;
+  display: inline;
+  span{
+    padding-left: 10px;
+    padding-right: 34px;
+  }
+}
+
+.info_static{
+  padding-top: 20px;
+  width: 250px;
+}
+
+.info_static2{
+  position: relative;
+  bottom: 90px;
+  left: 200px;
+  width: 250px;
+}
+
+.phone_market{
+  margin-left: $margins;
+  position: relative;
+  bottom: 50px;
+
+  @media screen and (max-width: 768px){
+    margin-left: 38px;
+  }
+
+  @media screen and (max-width: 425px){
+    margin-left: 16px;
+  }
+}
+
+.main_image_phone{
+  position: relative;
+  left: 700px;
+  bottom: 450px;
+  width: 600px;
+  height: 328px;
+
+  img{
+    @media screen and (max-width: 768px){
+      width: 368px;
+      height: 225px;
+    }
+
+    @media screen and (max-width: 425px){
+      width: 368px;
+      height: 225px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    left: 400px;
+    bottom: 300px;
+  }
+
+  @media screen and (max-width: 425px){
+    left: 50px;
+    bottom: 770px;
+  }
+}
 
 
+//6. Let's discuss Block
+.your_project{
+  background-image: url("../img/blue_background.png");
+  padding-top: 70px;
+  height: 400px;
+
+  @media screen and (max-width: 768px){
+    padding-top: 10px;
+  }
+
+  @media screen and (max-width: 425px){
+    height: 700px;
+  }
+}
+
+.your_project_heading{
+  margin-left: $margins;
+
+  h1{
+    font-size: 36px;
+    color: white;
+  }
+
+  p{
+    color: white;
+
+    @media screen and (max-width: 425px){
+      margin-bottom: 128px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    margin-left: 38px;
+  }
+
+  @media screen and (max-width: 425px){
+    margin-left: 16px;
+  }
+}
+
+.your_project_form{
+  border-style: solid;
+  border-color: white;
+  border-radius: 12px;
+  background-color: white;
+  width: 530px;
+  height: 160px;
+  display: grid;
+  grid-template-columns: repeat(2, 264px);
+  position: relative;
+  left: 730px;
+  bottom: 150px;
+
+  button{
+    width: 178px;
+    height: 40px;
+    position: relative;
+    left: 310px;
+
+    @media screen and (max-width: 768px){
+      top: 20px;
+      left: 350px;
+    }
+
+    @media screen and (max-width: 425px){
+      top: 20px;
+      left: 100px;
+    }
+  }
+
+  input{
+    &:focus{
+      border-bottom: 1px solid $color-blue;
+    }
+
+    @media screen and (max-width: 768px){
+      width: 240px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    left: 38px;
+    bottom: 0;
+    width: 550px;
+  }
+
+  @media screen and (max-width: 425px){
+    left: 16px;
+    bottom: 0;
+    width: 393px;
+    height: 300px;
+    grid-template-columns: repeat(1, 264px);
+  }
+}
+
+.phone_number_block{
+  position: relative;
+  top: 25px;
+  left: 24px;
+
+  @media  screen and (max-width: 425px){
+    input{
+      width: 330px;
+    }
+  }
+}
+
+.full_name_block{
+  position: relative;
+  top: 25px;
+
+  label{
+    @media screen and (max-width: 768px){
+      position: relative;
+      top: 0;
+      left: 10px;
+    }
+  }
+
+  input{
+    @media screen and (max-width: 768px){
+      width: 240px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    top: 25px;
+    left: 23px;
+  }
+
+  @media  screen and (max-width: 425px){
+    input{
+      width: 330px;
+    }
+  }
+}
+
+//7. Development Block
+$magrin_block: 20px;
+
+.development_block1{
+  margin-left: $margins;
+  display: grid;
+  grid-template-columns: repeat(1, 900.49px);
+  grid-template-rows: repeat(2, 240.31px);
+  padding-bottom: 100px;
+  margin-top: 50px;
+
+  @media screen and (max-width: 768px){
+    margin-left: 38px;
+
+  }
+
+  @media screen and (max-width: 425px){
+    margin-left: 19px;
+  }
+}
+
+.development_block2{
+  display: grid;
+  grid-template-columns: repeat(1, 900.49px);
+  grid-template-rows: repeat(2, 240.31px);
+  position: relative;
+  bottom: 775px;
+  left: 800px;
+  width: 392px;
+
+  @media screen and (max-width: 768px){
+    left: 38px;
+    bottom: 40px;
+  }
+
+  @media screen and (max-width: 425px){
+    left: 19px;
+    bottom: 60px;
+  }
+}
+
+.development_stages{
+  background-color: white;
+  height: 1000px;
+  h1{
+    font-size: 36px;
+    padding-top: 70px;
+    margin-top: 0;
+    margin-left: $margins;
+
+    @media screen and (max-width: 768px){
+      margin-left: 38px;
+    }
+
+    @media screen and (max-width: 425px){
+      margin-left: 19px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    height: 1700px;
+  }
+}
+
+.Developments{
+  border-style: solid;
+  border-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: 392px;
+  height: 192px;
+
+  p{
+    margin-left: $magrin_block;
+  }
+
+  @media screen and (max-width: 768px){
+    width: 692px;
+  }
+
+  @media screen and (max-width: 425px){
+    width: 392px;
+
+    p{
+      width: 320px;
+    }
+  }
+}
+
+.number_development{
+  position: relative;
+  left: 250px;
+  bottom: 186px;
+
+  img{
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 768px){
+    left: 550px;
+    bottom: 150px;
+  }
+}
+
+.logo_development{
+  display: flex;
+  align-items: flex-start;
+  img{
+    margin-right: 10px;
+  }
+  position: relative;
+  margin-left: $magrin_block;
+  margin-top: $magrin_block;
+}
+
+.Analysis_block{
+  img{
+    left: 304px;
+  }
+
+  @media screen and (max-width: 768px){
+    img{
+      left: 595px;
+      bottom: 172px;
+    }
+  }
+
+  @media screen and (max-width: 425px){
+    img{
+      left: 300px;
+      bottom: 180px;
+    }
+  }
+}
+
+.Development_block{
+  @media screen and (max-width: 425px){
+    img{
+      left: 250px;
+      bottom: 182px;
+    }
+  }
+}
+
+.Design_block{
+  img{
+    bottom: 170px;
+    left: 260px;
+  }
+
+  @media screen and (max-width: 768px){
+    img{
+      left: 555px;
+      bottom: 132px;
+    }
+  }
+
+  @media screen and (max-width: 425px){
+    img{
+      left: 260px;
+      bottom: 185px;
+    }
+  }
+}
+
+.Testing_block{
+  img{
+    left: 241px;
+  }
+
+  @media screen and (max-width: 768px){
+    img{
+      left: 540px;
+      bottom: 140px;
+    }
+  }
+
+  @media screen and (max-width: 425px){
+    img{
+      left: 240px;
+      bottom: 182px;
+    }
+  }
+}
+
+.Launching_block{
+  img{
+    bottom: 142px;
+    left: 257px;
+  }
+
+  @media screen and (max-width: 768px){
+    img{
+      left: 540px;
+      bottom: 140px;
+    }
+  }
+
+  @media screen and (max-width: 425px){
+    img{
+      left: 250px;
+      bottom: 165px;
+    }
+  }
+}
+
+.Support_block{
+  @media screen and (max-width: 425px){
+    img{
+      left: 250px;
+      bottom: 185px;
+    }
+  }
+}
+
+//8. Our team
+.our_team{
+  margin-left: $margins;
+  height: 550px;
+
+  p{
+    font-size: 15px;
+  }
+
+  @media screen and (max-width: 768px){
+    margin-left: 38px;
+    height: 900px;
+  }
+}
+
+.info_team{
+  h1{
+    padding-top: 40px;
+    font-size: 36px;
+  }
+}
+
+.image_our_team {
+  box-shadow: 0 12px 10px rgba(10, 0, 10, 0.5);
+  width: 603px;
+  height: 392px;
+  position: relative;
+  left: 700px;
+  bottom: 380px;
+
+  @media screen and (max-width: 768px){
+    left: 0;
+    bottom: 640px;
+  }
+
+  @media screen and (max-width: 425px){
+    width: 392px;
+    height: 237px;
+    left: 0;
+    bottom: 600px;
+
+    img{
+      width: 392px;
+      height: 237px;
+    }
+  }
+}
+
+.team_content_info{
+  display: flex;
+
+  @media screen and (max-width: 768px){
+    padding-top: 380px;
+  }
+}
+
+.team_block{
+  padding-right: 40px;
+  h1{
+    font-size: 48px;
+    margin-bottom: 0;
+
+    @media screen and (max-width: 425px){
+      font-size: 28px;
+    }
+  }
+
+  p{
+    font-size: 15px;
+    color: #667085;
+    padding-bottom: 20px;
+
+    @media screen and (max-width: 425px){
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 425px){
+    padding-right: 30px;
+  }
+}
+
+//9. Get_book Block
+.get_book{
+  height: 600px;
+  background-image: url("../img/blue_background.png");
+
+  h1{
+    margin-left: $margins;
+    color: white;
+    padding-top: 80px;
+    font-size: 36px;
+
+    @media screen and (max-width: 768px){
+      margin-left: 38px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    height: 750px;
+  }
+
+  @media screen and (max-width: 425px){
+    height: 1150px;
+  }
+}
+
+.get_book_form{
+  border-style: solid;
+  border-color: white;
+  border-radius: 12px;
+  background-color: white;
+  width: 550px;
+  height: 284px;
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  margin-left: $margins;
+
+  button{
+    width: 178px;
+    height: 60px;
+    position: relative;
+    left: 322px;
+    top: 50px;
+
+    @media screen and (max-width: 768px){
+      height: 40px;
+      width: 210px;
+      left: 20px;
+      top: -20px;
+    }
+  }
+
+  input{
+    margin-bottom: 20px;
+
+    &:focus{
+      border-bottom: 1px solid $color-blue;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    grid-template-columns: repeat(1, 250px);
+    grid-template-rows: repeat(1, 80px);
+    width: 335px;
+    height: 431px;
+    margin-left: 38px;
+  }
+
+  @media screen and (max-width: 425px){
+    position: relative;
+    top: 400px;
+  }
+}
+
+.phone_number_book, .full_name_book{
+  position: relative;
+  top: 50px;
+  left: 24px;
+
+  input{
+    @media screen and (max-width: 768px) {
+      margin-top: 10px;
+    }
+  }
+}
+
+.email_block{
+  position: relative;
+  top: 120px;
+  right: 475px;
+
+  input{
+    width: 475px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 10px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    top: 20px;
+    right: -30px;
+
+    input{
+      width: 225px;
+    }
+  }
+}
+
+.image_get_book{
+  position: relative;
+  left: 700px;
+  bottom: 430px;
+  width: 343px;
+  height: 520px;
+
+  @media screen and (max-width: 768px){
+    width: 283px;
+    height: 428px;
+    left: 250px;
+    bottom: 450px;
+  }
+
+  @media screen and (max-width: 768px){
+    img{
+      width: 384px;
+      height: 342px;
+    }
+    left: 0;
+    bottom: 440px;
+  }
+}
+
+//10. FAQ
+.faq{
+  height: 600px;
+  background-color: white;
+  h1{
+    margin-left: $margins;
+    font-size: 36px;
+    padding-bottom: 40px;
+    padding-top: 50px;
+    width: 600px;
+    border-bottom: 1px solid #D0D5DD;
+    margin-top: 0;
+
+    @media screen and (max-width: 768px){
+      margin-left: 17px;
+      border: none;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    height: 900px;
+  }
+}
+
+.faq_content{
+  height: 60px;
+  border-bottom: 1px solid #D0D5DD;
+  padding-bottom: 100px;
+  img{
+    position: relative;
+    left: 530px;
+    bottom: 60px;
+  }
+
+  h3{
+    margin-right: 200px;
+  }
+}
+
+.faq_content_block1{
+  margin-left: $margins;
+  display: grid;
+  grid-template-columns: repeat(1, 800px);
+  grid-template-rows: repeat(2, 150px);
+
+  @media screen and (max-width: 768px){
+    margin-left: 91px;
+    grid-template-columns: repeat(1, 800px);
+    grid-template-rows: repeat(1, 150px);
+    position: relative;
+    top: 400px;
+  }
+
+  @media screen and (max-width: 425px){
+    margin-left: 16px;
+    grid-template-columns: repeat(1, 800px);
+    grid-template-rows: repeat(1, 150px);
+    position: relative;
+    top: 400px;
+  }
+}
+
+.faq_content_block2{
+  display: grid;
+  grid-template-columns: repeat(1, 800px);
+  grid-template-rows: repeat(2, 150px);
+
+  @media screen and (max-width: 768px){
+    margin-left: 91px;
+    grid-template-columns: repeat(1, 800px);
+    grid-template-rows: repeat(1, 150px);
+    position: relative;
+    right: 890px;
+    top: -5px;
+  }
+}
+
+.One_question{
+  width: 600px;
+
+  @media screen and (max-width: 425px){
+    width: 400px;
+  }
+
+  img{
+    @media screen and (max-width: 425px){
+      position: relative;
+      left: 320px;
+      bottom: 70px;
+    }
+  }
+}
+
+.Two_question{
+  width: 600px;
+  h3{
+    margin-right: 70px;
+  }
+
+  @media screen and (max-width: 425px){
+    width: 400px;
+  }
+
+  img{
+    @media screen and (max-width: 425px){
+      position: relative;
+      left: 320px;
+      bottom: 80px;
+    }
+  }
+}
+
+.Three_question {
+  position: relative;
+  bottom: 30px;
+  display: inline-block;
+  border-top: 1px solid #D0D5DD;
+  padding-bottom: 250px;
+  padding-top: 33px;
+  h3{
+    margin-bottom: 30px;
+  }
+
+  img{
+    position: relative;
+    left: 750px;
+    bottom: 180px;
+
+    @media screen and (max-width: 425px){
+      left: 340px;
+      bottom: 270px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    width: 600px;
+  }
+
+  @media screen and (max-width: 425px){
+    width: 400px;
+  }
+}
+
+.Four_question{
+  margin-top: 140px;
+
+  img{
+    left: 700px;
+
+    @media screen and (max-width: 425px){
+      position: relative;
+      left: 320px;
+      bottom: 100px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    width: 600px;
+  }
+
+  @media screen and (max-width: 425px){
+    width: 400px;
+    position: relative;
+    top: 10px;
+  }
+}
+
+.faq_info{
+  display: flex;
+}
 
 
-
-
-
-//Подвал
+//11. Footer Block
 footer{
+  background-color: white;
+  margin-top: auto;
+}
+
+.footer_content{
   margin: auto;
   background-color: #101828;
   color: white;
@@ -558,141 +1551,7 @@ footer{
   }
 }
 
-//Третий блок
-
-.industries_content{
-  background-color: $color-gray;
-}
-
-
-//Четвёртый блок
-.main_h1{
-  font-size: 36px;
-  font-family: 'Inter', sans-serif;
-  padding-top: 30px;
-}
-
-.example{
-  height: 550px;
-}
-
-.projects_examples{
-  background-color: $color-gray;
-  h1{
-    margin-left: $margins;
-  }
-
-  p{
-    margin-left: $margins;
-  }
-}
-
-.projects_list{
-  padding-top: 50px;
-  margin-left: $margins;
-}
-
-.projects_list li{
-  list-style-type: none;
-  display: inline;
-  padding: 20px;
-  a{
-    color: black;
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    font-size: 17px;
-    &:hover{
-      border-bottom: 2px solid $color-blue;
-    }
-  }
-
-  button{
-    padding: 11px 24px;
-    border: none;
-    border-radius: 8px;
-    text-align: left;
-    background-color: $color-blue;
-    color: white;
-  }
-}
-
-#button_left{
-  padding-left: 176px;
-}
-
-.text_gray{
-  color: #475467;
-}
-
-.address_block{
-  display: flex;
-  align-items: center;
-  margin-left: 65px;
-  span{
-    color: black;
-    font-size: 15px;
-  }
-}
-
-.address_block li{
-  list-style-type: none;
-  display: inline;
-  span{
-    padding-left: 10px;
-    padding-right: 34px;
-  }
-}
-
-.info_static{
-  padding-top: 20px;
-  width: 250px;
-}
-
-.info_static2{
-  position: relative;
-  bottom: 90px;
-  left: 200px;
-  width: 250px;
-}
-
-.phone_market{
-  margin-left: $margins;
-  position: relative;
-  bottom: 50px;
-}
-
-.main_image_phone{
-  position: relative;
-  left: 700px;
-  bottom: 450px;
-  width: 600px;
-  height: 328px;
-}
-
-
-
-//Пятый блок
-.your_project{
-  h1{
-    font-size: 36px;
-    color: white;
-  }
-
-  p{
-    color: white;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-//спрайты
+//12. Spite Block
 .sprite{
   fill: $color_blue;
 }
