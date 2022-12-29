@@ -1,42 +1,9 @@
-@import url(global.css);
-@import url(fonts.css);
-@import url(utils.css);
+@import url(./global.css);
+@import url(./fonts.css);
+@import url(./utils.css);
 body {
   margin: 0;
-  padding-bottom: 48px;
-  background-color: white; }
-  @media screen and (max-width: 768px) {
-    body {
-      padding-bottom: 0; } }
-  @media screen and (max-width: 425px) {
-    body {
-      padding-bottom: 0; } }
-
-span {
-  color: #2D66EE; }
-
-button {
-  padding: 11px 24px;
-  border: none;
-  border-radius: 8px;
-  text-align: left;
-  background-color: #2D66EE; }
-
-input {
-  border: none;
-  border-bottom: 1px solid #D0D5DD;
-  background-color: transparent;
-  transition: 0.3s;
-  outline: none;
-  display: inline;
-  font-size: 17px; }
-
-.wrapper {
-  background-color: #F2F4F7;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow: hidden; }
+  padding-bottom: 48px; }
 
 .header_burger {
   display: none; }
@@ -147,8 +114,12 @@ header {
   font-family: 'Inter', sans-serif;
   color: #2D66EE; }
 
+span {
+  color: #2D66EE; }
+
 .main-banner {
   padding-top: 120px;
+  background-color: #F2F4F7;
   height: 1000px;
   overflow: hidden; }
   @media screen and (max-width: 425px) {
@@ -200,32 +171,18 @@ header {
       right: 70px;
       z-index: 10; } }
 
-.name_block_info {
+.name_block {
   padding-top: 34px;
   padding-bottom: 26px;
-  height: 120px;
-  display: grid;
-  grid-template-columns: repeat(1, 120.49px); }
-  .name_block_info button {
-    position: relative;
-    left: 500px;
-    bottom: 94px; }
-    @media screen and (max-width: 768px) {
-      .name_block_info button {
-        left: 0;
-        top: 50px;
-        width: 150px; }
-        .name_block_info button br {
-          display: none; } }
+  display: flex;
+  justify-content: flex-start; }
 
-.name_block2 {
-  position: relative;
-  left: 250px;
-  bottom: 43px; }
-  @media screen and (max-width: 768px) {
-    .name_block2 {
-      left: 0;
-      top: 20px; } }
+.name_block button {
+  padding: 11px 24px;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  background-color: #2D66EE; }
 
 .button_text_consultation {
   color: white; }
@@ -240,15 +197,52 @@ header {
   color: #667085;
   font-size: 13px; }
 
-.input_name:focus {
-  border-bottom: 1px solid #2D66EE; }
+.input_name {
+  position: relative;
+  right: 90px;
+  top: 20px;
+  height: 23px;
+  border: none;
+  border-bottom: 1px solid #D0D5DD;
+  background-color: transparent;
+  transition: 0.3s;
+  outline: none;
+  display: inline;
+  font-size: 17px; }
+  .input_name:focus {
+    border-bottom: 1px solid #2D66EE; }
+  @media screen and (max-width: 768px) {
+    .input_name {
+      top: 40px;
+      right: 46px; } }
 
 .label_fname {
   color: #667085;
   font-size: 13px; }
+  @media screen and (max-width: 768px) {
+    .label_fname {
+      position: relative;
+      top: 80px;
+      right: 260px; } }
 
-.input_fname:focus {
-  border-bottom: 1px solid #2D66EE; }
+.input_fname {
+  position: relative;
+  right: 60px;
+  top: 20px;
+  height: 23px;
+  border: none;
+  border-bottom: 1px solid #D0D5DD;
+  background-color: transparent;
+  transition: 0.3s;
+  outline: none;
+  font-size: 17px; }
+  .input_fname:focus {
+    border-bottom: 1px solid #2D66EE; }
+  @media screen and (max-width: 768px) {
+    .input_fname {
+      position: relative;
+      top: 120px;
+      right: 300px; } }
 
 .image_main {
   display: grid;
@@ -368,8 +362,7 @@ header {
   padding-top: 50px;
   padding-bottom: 80px;
   display: flex;
-  align-items: center;
-  background-color: white; }
+  align-items: center; }
   @media screen and (max-width: 768px) {
     .development_cycle {
       padding-bottom: 150px; } }
@@ -378,10 +371,6 @@ header {
       padding-bottom: 530px; } }
 
 footer {
-  background-color: white;
-  margin-top: auto; }
-
-.footer_content {
   margin: auto;
   background-color: #101828;
   color: white;
@@ -389,19 +378,19 @@ footer {
   border-color: #101828;
   border-radius: 12px;
   width: 1450px; }
-  .footer_content h1 {
+  footer h1 {
     text-align: center; }
-  .footer_content p {
+  footer p {
     text-align: center; }
   @media screen and (max-width: 768px) {
-    .footer_content {
+    footer {
       max-width: 100%;
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
       align-content: center; } }
   @media screen and (max-width: 425px) {
-    .footer_content {
+    footer {
       max-width: 100%;
       display: flex;
       flex-direction: column;
@@ -435,6 +424,96 @@ footer {
 @media screen and (max-width: 425px) {
   .contacts_element p {
     padding-right: 0; } }
+
+.industries_content {
+  background-color: #F2F4F7; }
+
+.main_h1 {
+  font-size: 36px;
+  font-family: 'Inter', sans-serif;
+  padding-top: 30px; }
+
+.example {
+  height: 550px; }
+
+.projects_examples {
+  background-color: #F2F4F7; }
+  .projects_examples h1 {
+    margin-left: 108px; }
+  .projects_examples p {
+    margin-left: 108px; }
+
+.projects_list {
+  padding-top: 50px;
+  margin-left: 108px; }
+
+.projects_list li {
+  list-style-type: none;
+  display: inline;
+  padding: 20px; }
+  .projects_list li a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px; }
+    .projects_list li a:hover {
+      border-bottom: 2px solid #2D66EE; }
+  .projects_list li button {
+    padding: 11px 24px;
+    border: none;
+    border-radius: 8px;
+    text-align: left;
+    background-color: #2D66EE;
+    color: white; }
+
+#button_left {
+  padding-left: 176px; }
+
+.text_gray {
+  color: #475467; }
+
+.address_block {
+  display: flex;
+  align-items: center;
+  margin-left: 65px; }
+  .address_block span {
+    color: black;
+    font-size: 15px; }
+
+.address_block li {
+  list-style-type: none;
+  display: inline; }
+  .address_block li span {
+    padding-left: 10px;
+    padding-right: 34px; }
+
+.info_static {
+  padding-top: 20px;
+  width: 250px; }
+
+.info_static2 {
+  position: relative;
+  bottom: 90px;
+  left: 200px;
+  width: 250px; }
+
+.phone_market {
+  margin-left: 108px;
+  position: relative;
+  bottom: 50px; }
+
+.main_image_phone {
+  position: relative;
+  left: 700px;
+  bottom: 450px;
+  width: 600px;
+  height: 328px; }
+
+.your_project h1 {
+  font-size: 36px;
+  color: white; }
+.your_project p {
+  color: white; }
 
 .sprite {
   fill: #2D66EE; }

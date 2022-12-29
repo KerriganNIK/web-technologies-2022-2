@@ -1,63 +1,15 @@
-@import "global.css";
-@import "fonts.css";
-@import "utils.css";
+@import "./global.css";
+@import "./fonts.css";
+@import "./utils.css";
 
 $color-blue: #2D66EE;
 $color-gray: #F2F4F7;
 $margins: 108px;
-
-//1. Header Block
-//2. Main Block
-//3. Full development Block
-//11. Footer Block
-//12. Spite Block
-
-
 body{
   margin: 0;
   padding-bottom: 48px;
-  background-color: white;
-  @media screen and (max-width: 768px){
-    padding-bottom: 0;
-  }
-
-  @media screen and (max-width: 425px){
-    padding-bottom: 0;
-  }
 }
-
-span{
-  color: $color-blue;
-}
-
-button{
-  padding: 11px 24px;
-  border: none;
-  border-radius: 8px;
-  text-align: left;
-  background-color: $color-blue;
-}
-
-input{
-  border: none;
-  border-bottom: 1px solid #D0D5DD;
-  background-color: transparent;
-  transition: 0.3s;
-  outline: none;
-  display: inline;
-  font-size: 17px;
-}
-
-
-.wrapper{
-  background-color: $color-gray;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-//1. Header Block
+//Шапка
 .header_burger{
   display: none;
 
@@ -77,6 +29,7 @@ input{
     right: 50px;
   }
 }
+
 
 header{
   display: flex;
@@ -190,10 +143,14 @@ header{
   color: $color-blue;
 }
 
-//2. Main Block
+//Первый блок
+span{
+  color: $color-blue;
+}
 
 .main-banner{
   padding-top: 120px;
+  background-color: $color-gray;
   height: 1000px;
   overflow: hidden;
 
@@ -258,37 +215,19 @@ header{
   }
 }
 
-.name_block_info{
+.name_block{
   padding-top: 34px;
   padding-bottom: 26px;
-  height: 120px;
-  display: grid;
-  grid-template-columns: repeat(1, 120.49px);
-  button{
-    position: relative;
-    left: 500px;
-    bottom: 94px;
-
-    @media screen and (max-width: 768px){
-      left: 0;
-      top: 50px;
-      width: 150px;
-      br{
-        display: none;
-      }
-    }
-  }
+  display: flex;
+  justify-content: flex-start;
 }
 
-.name_block2{
-  position: relative;
-  left: 250px;
-  bottom: 43px;
-
-  @media screen and (max-width: 768px){
-    left: 0;
-    top: 20px;
-  }
+.name_block button{
+  padding: 11px 24px;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  background-color: $color-blue;
 }
 
 .button_text_consultation{
@@ -309,19 +248,61 @@ header{
 }
 
 .input_name{
+  position: relative;
+  right: 90px;
+  top: 20px;
+  height: 23px;
+
+  border: none;
+  border-bottom: 1px solid #D0D5DD;
+  background-color: transparent;
+  transition: 0.3s;
+  outline: none;
+  display: inline;
+  font-size: 17px;
+
   &:focus{
     border-bottom: 1px solid $color-blue;
+  }
+
+  @media screen and (max-width: 768px){
+    top: 40px;
+    right: 46px;
   }
 }
 
 .label_fname{
   color: #667085;
   font-size: 13px;
+
+  @media screen and (max-width: 768px){
+    position: relative;
+    top: 80px;
+    right: 260px;
+  }
 }
 
 .input_fname{
+  position: relative;
+  right: 60px;
+  top: 20px;
+  height: 23px;
+
+  border: none;
+  border-bottom: 1px solid #D0D5DD;
+  background-color: transparent;
+  transition: 0.3s;
+  outline: none;
+  font-size: 17px;
+
   &:focus{
     border-bottom: 1px solid $color-blue;
+  }
+
+  @media screen and (max-width: 768px){
+    position: relative;
+    top: 120px;
+    right: 300px;
   }
 }
 
@@ -395,7 +376,7 @@ header{
   }
 }
 
-//3. Full development Block
+//второй блок
 .development-technologies{
   h1{
     font-size: 36px;
@@ -486,7 +467,6 @@ header{
   padding-bottom: 80px;
   display: flex;
   align-items: center;
-  background-color: white;
 
   @media screen and (max-width: 768px){
     padding-bottom: 150px;
@@ -497,13 +477,15 @@ header{
   }
 }
 
-//11. Footer Block
-footer{
-  background-color: white;
-  margin-top: auto;
-}
 
-.footer_content{
+
+
+
+
+
+
+//Подвал
+footer{
   margin: auto;
   background-color: #101828;
   color: white;
@@ -576,7 +558,141 @@ footer{
   }
 }
 
-//12. Spite Block
+//Третий блок
+
+.industries_content{
+  background-color: $color-gray;
+}
+
+
+//Четвёртый блок
+.main_h1{
+  font-size: 36px;
+  font-family: 'Inter', sans-serif;
+  padding-top: 30px;
+}
+
+.example{
+  height: 550px;
+}
+
+.projects_examples{
+  background-color: $color-gray;
+  h1{
+    margin-left: $margins;
+  }
+
+  p{
+    margin-left: $margins;
+  }
+}
+
+.projects_list{
+  padding-top: 50px;
+  margin-left: $margins;
+}
+
+.projects_list li{
+  list-style-type: none;
+  display: inline;
+  padding: 20px;
+  a{
+    color: black;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    &:hover{
+      border-bottom: 2px solid $color-blue;
+    }
+  }
+
+  button{
+    padding: 11px 24px;
+    border: none;
+    border-radius: 8px;
+    text-align: left;
+    background-color: $color-blue;
+    color: white;
+  }
+}
+
+#button_left{
+  padding-left: 176px;
+}
+
+.text_gray{
+  color: #475467;
+}
+
+.address_block{
+  display: flex;
+  align-items: center;
+  margin-left: 65px;
+  span{
+    color: black;
+    font-size: 15px;
+  }
+}
+
+.address_block li{
+  list-style-type: none;
+  display: inline;
+  span{
+    padding-left: 10px;
+    padding-right: 34px;
+  }
+}
+
+.info_static{
+  padding-top: 20px;
+  width: 250px;
+}
+
+.info_static2{
+  position: relative;
+  bottom: 90px;
+  left: 200px;
+  width: 250px;
+}
+
+.phone_market{
+  margin-left: $margins;
+  position: relative;
+  bottom: 50px;
+}
+
+.main_image_phone{
+  position: relative;
+  left: 700px;
+  bottom: 450px;
+  width: 600px;
+  height: 328px;
+}
+
+
+
+//Пятый блок
+.your_project{
+  h1{
+    font-size: 36px;
+    color: white;
+  }
+
+  p{
+    color: white;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+//спрайты
 .sprite{
   fill: $color_blue;
 }
