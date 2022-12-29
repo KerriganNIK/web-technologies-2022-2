@@ -941,14 +941,15 @@ header {
   height: 520px; }
   @media screen and (max-width: 768px) {
     .image_get_book {
-      width: 283px;
-      height: 428px;
-      left: 250px;
-      bottom: 450px; } }
-  @media screen and (max-width: 768px) {
+      left: 350px;
+      bottom: 400px; }
+      .image_get_book img {
+        width: 384px;
+        height: 342px; } }
+  @media screen and (max-width: 425px) {
     .image_get_book {
       left: 0;
-      bottom: 440px; }
+      bottom: 400px; }
       .image_get_book img {
         width: 384px;
         height: 342px; } }

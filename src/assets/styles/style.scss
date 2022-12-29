@@ -1284,19 +1284,21 @@ $magrin_block: 20px;
   height: 520px;
 
   @media screen and (max-width: 768px){
-    width: 283px;
-    height: 428px;
-    left: 250px;
-    bottom: 450px;
+    img{
+      width: 384px;
+      height: 342px;
+    }
+    left: 350px;
+    bottom: 400px;
   }
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 425px){
     img{
       width: 384px;
       height: 342px;
     }
     left: 0;
-    bottom: 440px;
+    bottom: 400px;
   }
 }
 
