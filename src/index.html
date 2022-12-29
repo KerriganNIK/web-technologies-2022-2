@@ -6,9 +6,256 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/src/assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 <body>
-hello world from Nikita
+<header>
+    <div class="header_block">
+        <div class="header_burger">
+            <h1>&#9776</h1>
+        </div>
+
+        <a href="index.html" class="header_logo">IT WEBSITE</a>
+        <nav>
+            <ul class="menu">
+                <li><a href="#"></a></li>
+                <li><a href="#">Media</a></li>
+                <li><a href="#">Cases</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul class="contacts">
+                <li><svg class="sprite phone"><use href="./sprite.svg#phone" /></svg></li>
+                <li>+7 (111) 111 11 11</li>
+                <li>+7 (111) 111 11 11</li>
+                <li><svg class="sprite mail"><use href="./sprite.svg#mail" /></svg></li>
+                <li>itcompany@mail.com</li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="main-banner">
+        <div class="software_development">
+            <h1>Development of <span>mobile <br>applications</span> and <span>web services</span> of<br>any complexity</h1>
+            <p>We create mobile applications for iOS, Android that transfer your business to mobile<br> applications of your customers' devices</p>
+        </div>
+
+        <div class="main_form">
+            <div class="number_block">
+                <h2>Leave your contacts and we will call you back
+                    within 30 minutes</h2>
+
+                <div class="name_block">
+                    <label for="input_name" class="label_name">Phone number</label>
+                    <input id = "input_name" type="text" class="input_name">
+
+                    <label for="input_fname" class="label_fname">Full name</label>
+                    <input id = "input_fname" type="text" class="input_fname">
+
+                    <button class = "button_consultation"><span class="button_text_consultation">Get<br> consultation</span></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="image_main">
+            <div class="image_block1">
+                <img src="assets/img/phone1.jfif" alt="">
+                <img src="assets/img/phone2.jfif" alt="">
+                <img src="assets/img/phone3.jfif" alt="">
+            </div>
+
+
+            <div class="image_block2">
+                <img src="assets/img/phone4.jfif" alt="">
+                <img src="assets/img/phone5.jfif" alt="">
+                <img src="assets/img/phone6.jfif" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="development_cycle">
+        <div class="development-technologies">
+            <h1>Full development cycle</h1>
+            <p id="development_coments">We use proven technologies</p>
+            <h4>Web</h4>
+            <p>PHP <span>/</span> Javascript <span>/</span> Node.JS <span>/</span> Web Socket <span>/</span> Socket.io <span>/</span> Vue.js<span>/</span><br> Nuxt <span>/</span> MySQL <span>/</span> Laravel / GO lang <span>/</span> django <span>/</span> Python</p>
+            <h4>Mobile</h4>
+            <p>Swift <span>/</span> Kotlin <span>/</span> Alamofire <span>/</span> Firebase <span>/</span> CoreData <span>/</span> Room <span>/</span> Realm <span>/</span><br> Coroutine <span>/</span> RxJava <span>/</span> RxSwift <span>/</span> Unit Test <span>/</span> Navigation</p>
+        </div>
+
+        <div class="development_services">
+            <nav>
+                <ul>
+                    <li><a href="#">iOS  development</a> <svg class="sprite arrow"> <use href="./sprite.svg#arrow" /></svg></li>
+                    <li><a href="#">Android development</a> <svg class="sprite arrow"> <use href="./sprite.svg#arrow" /></svg></li>
+                    <li><a href="#">Web development</a> <svg class="sprite arrow"> <use href="./sprite.svg#arrow" /></svg></li>
+                    <li><a href="#">UI/UX design</a> <svg class="sprite arrow"> <use href="./sprite.svg#arrow" /></svg></li>
+                    <li><a href="#">Testing</a> <svg class="sprite arrow"> <use href="./sprite.svg#arrow" /></svg></li>
+                    <li><a href="#">Launch</a> <svg class="sprite arrow"> <use href="./sprite.svg#arrow" /></svg></li>
+                    <li><a href="#">IT consulting</a> <svg class="sprite arrow"> <use href="./sprite.svg#arrow" /></svg></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+
+    <hr>
+    <section class="industries_content">
+        <h1>Developed more than <span>100</span> projects in <span>15</span> industries</h1>
+        <div class="industries_list">
+
+        </div>
+    </section>
+    <hr>
+
+
+    <section class="projects_examples">
+        <h1 class="main_h1">Projects we are proud of</h1>
+        <p>Our software development company is truly proud of the wonderful clients we have<br> worked with. We enjoy a long-term partnership</p>
+        <div class="projects_list">
+            <nav>
+                <ul>
+                    <li><a href="#">I-teka</a></li>
+                    <li><a href="#">Dauletten</a></li>
+                    <li><a href="#">Guru Bosch</a></li>
+                    <li><a href="#">Santo</a></li>
+                    <li><a href="#">Home Credit Bank</a></li>
+                    <li><a href="#">BI Partners</a></li>
+                    <li><a href="#">Europharma</a></li>
+                    <li id="button_left"><button>View 100 more projects</button></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="example">
+            <h1 class="main_h1">I-teka</h1>
+            <p>The application is designed to search for drugs by availability in pharmacies in cities.<br> During quarantine, the application helped many people,<br> which gives more value.</p>
+            <p class="text_gray">Business analysis<span> /</span> iOS <span>/</span> Android <span>/</span> QA <span>/</span> UI/UX Design</p>
+            <div class="address_block">
+                <ul>
+                    <li><svg class="sprite geolocation"><use href="./sprite.svg#geolocation" /></svg></li>
+                    <li><span>Kazakhstan</span></li>
+                    <li><svg class="sprite medicine"><use href="./sprite.svg#medicine" /></svg></li>
+                    <li><span>Medicine</span></li>
+                </ul>
+            </div>
+
+            <div class="info_static">
+                <div class="static_container">
+                    <h1>400%</h1>
+                </div>
+                <p class="text_gray">User Growth</p>
+            </div>
+
+            <div class="info_static2">
+                <div class="static_container">
+                    <h1>+200 000</h1>
+                </div>
+                <p class="text_gray">Active Users</p>
+            </div>
+
+            <div class="phone_market">
+                <img src="assets/img/ios.png" alt="">
+                <img src="assets/img/android.png" alt="">
+            </div>
+
+            <div class="main_image_phone">
+                <img src="assets/img/i-teka.png" alt="">
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <section class="your_project">
+        <div>
+            <h1>Let's discuss<br> Your project</h1>
+            <p>Let's figure out how to create an effective application,<br>
+                its cost and terms of its development</p>
+        </div>
+        <div class="your_project_form">
+
+        </div>
+    </section>
+    <hr>
+
+    <section class="development_stages">
+
+    </section>
+    <hr>
+
+    <section class="our_team">
+        <div class="info_team">
+
+        </div>
+    </section>
+    <hr>
+
+    <section class="get_book">
+        <h1>Get the book for free by leaving your contacts</h1>
+        <div class="get_book_form">
+
+        </div>
+    </section>
+    <hr>
+
+    <section class="faq">
+        <h1>FAQ</h1>
+        <div class="faq_info">
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <h1>IT WEBSITE</h1>
+    <div class="footer_contact">
+        <div class="contacts_element">
+            <div class="contacts_container">
+                <svg class="sprite_phone_gray">
+                    <use href="./sprite.svg#phone"/>
+                </svg>
+                <span class="contact-label">Contact nums</span>
+            </div>
+            <p>+7 (778) 395 90 26</p>
+        </div>
+
+        <div class="contacts_element">
+            <div class="contacts_container">
+                <svg class="sprite_mail_gray">
+                    <use href="./sprite.svg#mail"/>
+                </svg>
+                <span class="contact-label">Post</span>
+            </div>
+            <p>mail@mail.com</p>
+        </div>
+
+        <div class="contacts_element">
+            <div class="contacts_container">
+                <svg class="sprite_geolocation_gray">
+                    <use href="./sprite.svg#geolocation"/>
+                </svg>
+                <span class="contact-label">Adress</span>
+            </div>
+            <p>City city, steet st. 90</p>
+        </div>
+
+        <div class="contacts_element">
+            <div class="contacts_container">
+                <svg class="sprite_fille_gray">
+                    <use href="./sprite.svg#fille"/>
+                </svg>
+                <span class="contact-label">Leave a request</span>
+            </div>
+            <p>Leave a request</p>
+        </div>
+    </div>
+    <p><svg class="sprite_global"> <use href="./sprite.svg#global" /></svg>We work throughout world</p>
+</footer>
 </body>
 </html>
+
+
+
