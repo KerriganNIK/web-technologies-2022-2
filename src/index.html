@@ -10,55 +10,69 @@
 </head>
 <body>
 <header>
-    <a href="index.html" class="header_logo">IT WEBSITE</a>
-    <nav>
-        <ul class="menu">
-            <li>Services</li>
-            <li>Media</li>
-            <li>Cases</li>
-            <li>FAQ</li>
-            <li>Contacts</li>
-        </ul>
-    </nav>
-    <nav>
-        <ul class="contacts">
-            <li><svg class="sprite phone"><use href="./sprite.svg#phone" /></svg></li>
-            <li>+7 (111) 111 11 11</li>
-            <li>+7 (111) 111 11 11</li>
-            <li><svg class="sprite mail"><use href="./sprite.svg#mail" /></svg></li>
-            <li>itcompany@mail.com</li>
-        </ul>
-    </nav>
+    <div class="header_block">
+        <a href="index.html" class="header_logo">IT WEBSITE</a>
+        <nav>
+            <ul class="menu">
+                <li><a href="#"></a></li>
+                <li><a href="#">Media</a></li>
+                <li><a href="#">Cases</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul class="contacts">
+                <li><svg class="sprite phone"><use href="./sprite.svg#phone" /></svg></li>
+                <li>+7 (111) 111 11 11</li>
+                <li>+7 (111) 111 11 11</li>
+                <li><svg class="sprite mail"><use href="./sprite.svg#mail" /></svg></li>
+                <li>itcompany@mail.com</li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <main>
     <section class="main-banner">
-        <div>
-            <h1>Development of <span>mobile applications</span> and <span>web services</span> of any complexity</h1>
-            <p>We create mobile applications for iOS, Android that transfer your business to mobile applications of your customers' devices</p>
+        <div class="software_development">
+            <h1>Development of <span>mobile<br>applications</span> and <span>web services</span> of<br>any complexity</h1>
+            <p>We create mobile applications for iOS, Android that transfer your business to mobile<br> applications of your customers' devices</p>
         </div>
 
-        <div class="number__block">
+        <div class="number_block">
             <h2>Leave your contacts and we will call you back
                 within 30 minutes</h2>
+
+            <div class="name_block">
+                <label for="input_name" class="input_name_text">Phone number</label>
+                <input id = "input_name" type="text" class="input_name">
+
+                <label for="input_fname" class="input_fname_text">Full name</label>
+                <input id = "input_fname" type="text" class="input_fname">
+
+                <button class = "button_consultation"><span class="button_text_consultation">Get<br> consultation</span></button>
+            </div>
         </div>
 
-        <div class="name__block">
-            <label for="input_name" class="input__name__text">Phone number</label>
-            <input id = "input_name" type="text" class="input__name">
-            <button class = "button__consultation"><span class="button__text__consultation">Get consultation</span></button>
+        <div class="image_main">
+            <img src="assets/img/phone1.jfif" alt="">
+            <img src="assets/img/phone2.jfif" alt="">
+            <img src="assets/img/phone3.jfif" alt="">
+            <img src="assets/img/phone4.jfif" alt="">
+            <img src="assets/img/phone5.jfif" alt="">
+            <img src="assets/img/phone6.jfif" alt="">
         </div>
     </section>
-    <hr>
 
-    <section class="development cycle">
+    <div class="development_cycle">
         <div class="development-technologies">
             <h1>Full development cycle</h1>
-            <p>We use proven technologies</p>
-            <h4>Web</h4>>
-            <p>PHP / Javascript / Node.JS / Web Socket / Socket.io / Vue.js/ Nuxt / MySQL / Laravel / GO lang / django / Python</p>
+            <p id="development_coments">We use proven technologies</p>
+            <h4>Web</h4>
+            <p>PHP <span>/</span> Javascript <span>/</span> Node.JS <span>/</span> Web Socket <span>/</span> Socket.io <span>/</span> Vue.js<span>/</span><br> Nuxt <span>/</span> MySQL <span>/</span> Laravel / GO lang <span>/</span> django <span>/</span> Python</p>
             <h4>Mobile</h4>
-            <p>Swift / Kotlin / Alamofire / Firebase / CoreData / Room / Realm / Coroutine / RxJava / RxSwift / Unit Test / Navigation</p>
+            <p>Swift <span>/</span> Kotlin <span>/</span> Alamofire <span>/</span> Firebase <span>/</span> CoreData <span>/</span> Room <span>/</span> Realm <span>/</span><br> Coroutine <span>/</span> RxJava <span>/</span> RxSwift <span>/</span> Unit Test <span>/</span> Navigation</p>
         </div>
 
         <div class="development_services">
@@ -74,7 +88,7 @@
                 </ul>
             </nav>
         </div>
-    </section>
+    </div>
     <hr>
 
     <section class="industries_content">
@@ -161,9 +175,50 @@
 
 <footer>
     <h1>IT WEBSITE</h1>
-    <div class="footer_info">
+    <div class="footer_contact">
+        <div class="contacts_element">
+            <div class="contacts_container">
+                <svg class="sprite_phone_gray">
+                    <use href="./sprite.svg#phone"/>
+                </svg>
+                <span class="contact-label">Contact nums</span>
+            </div>
+            <p>+7 (778) 395 90 26</p>
+        </div>
 
+        <div class="contacts_element">
+            <div class="contacts_container">
+                <svg class="sprite_mail_gray">
+                    <use href="./sprite.svg#mail"/>
+                </svg>
+                <span class="contact-label">Post</span>
+            </div>
+            <p>mail@mail.com</p>
+        </div>
+
+        <div class="contacts_element">
+            <div class="contacts_container">
+                <svg class="sprite_geolocation_gray">
+                    <use href="./sprite.svg#geolocation"/>
+                </svg>
+                <span class="contact-label">Adress</span>
+            </div>
+            <p>City city, steet st. 90</p>
+        </div>
+
+        <div class="contacts_element">
+            <div class="contacts_container">
+                <svg class="sprite_fille_gray">
+                    <use href="./sprite.svg#fille"/>
+                </svg>
+                <span class="contact-label">Leave a request</span>
+            </div>
+            <p>Leave a request</p>
+        </div>
     </div>
+    <p><svg class="sprite_global"> <use href="./sprite.svg#global" /></svg>We work throughout world</p>
 </footer>
 </body>
 </html>
+
+
