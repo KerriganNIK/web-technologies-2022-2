@@ -1,130 +1,217 @@
-class PizzaType{
-    static Margaret = {
-        id: "Margaret",
-        name: "Маргарита",
-        price: 500,
-        calories: 300
+import {Pizza} from "./pizza.js";
+import {PizzaType} from "./pizza.js";
+import {PizzaSize} from "./pizza.js";
+import {AdditionallyAddPizza} from "./pizza.js";
+
+const pizza = new Pizza(null, null);
+
+function createPizzaButton(pizzaType) {
+    const pizzaButtonContainer = document.createElement("div");
+    pizzaButtonContainer.classList.add("PizzaButtonContainer")
+    const pizzaButton = document.createElement("button");
+    const pizzaImg = document.createElement("img");
+    const pizzaNameSpan = document.createElement("span");
+    if (pizzaType === PizzaType.Margaret) {
+        pizzaImg.src = "assets/img/Margaret.jpg";
+        pizzaImg.alt = "Margaret Pizza";
+    } else if (pizzaType === PizzaType.Pepperoni) {
+        pizzaImg.src = "assets/img/Pepperoni.jpg";
+        pizzaImg.alt = "Pepperoni Pizza";
+    } else if (pizzaType === PizzaType.Bavarian) {
+        pizzaImg.src = "assets/img/Bavarian.jpeg";
+        pizzaImg.alt = "Bavarian Pizza";
     }
 
-    static Pepperoni = {
-        id: "Pepperoni",
-        name: "Пеперони",
-        price: 800,
-        calories: 400
-    }
+    pizzaNameSpan.textContent = pizzaType.name;
 
-    static Bavarian = {
-        id: "Bavarian",
-        name: "Бавария",
-        price: 700,
-        calories: 450
-    }
+    pizzaButton.classList.add('PizzaTypeStyle');
+    pizzaButton.appendChild(pizzaImg);
+    pizzaButton.appendChild(pizzaNameSpan);
+    pizzaButtonContainer.appendChild(pizzaButton);
+
+    pizzaButton.addEventListener("click", function() {
+        pizza.type = pizzaType;
+        updateButtonBuyText();
+    });
+
+    return pizzaButtonContainer;
 }
-class PizzaSize {
-    static Big = {
-        id: "big",
-        name: "Большая",
-        price: 200,
-        calories: 200
+
+function createToppingButton(toppingType) {
+    const toppingButtonContainer = document.createElement("div");
+    toppingButtonContainer.classList.add("ToppingListDiv")
+    const toppingButton = document.createElement("button");
+    const toppingImg = document.createElement("img");
+    const toppingNameSpan = document.createElement("span");
+    toppingNameSpan.classList.add("ToppingNameSpan")
+
+    if (toppingType === AdditionallyAddPizza.CreamyMozzarella) {
+        toppingImg.src = "assets/img/CreamyMozzarella.jpg";
+        toppingImg.alt = "Creamy Mozzarella";
+    } else if (toppingType === AdditionallyAddPizza.CheeseBoard) {
+        toppingImg.src = "assets/img/CheeseBoard.png";
+        toppingImg.alt = "Cheese Board";
+    } else if (toppingType === AdditionallyAddPizza.CheddarParmesan) {
+        toppingImg.src = "assets/img/CheddarParmesan.jpg";
+        toppingImg.alt = "Cheddar Parmesan";
     }
 
-    static Small = {
-        id: "small",
-        name: "Маленькая",
-        price: 100,
-        calories: 100
-    }
-}
 
-class AdditionallyAddPizza {
-    static CreamyMozzarella = {
-        id: "CreamyMozzarella",
-        name: "Сливочная Мацарела",
-        info: {
-            small: {
-                price: 50,
-                calories: 0
-            },
-            big: {
-                price: 100,
-                calories: 0
+    if(pizza.size !== null){
+        toppingNameSpan.textContent = `${toppingType.name} ${toppingType.info[pizza.size.id === 'small' ? 'small' : 'big'].price}`;
+    }else{
+        toppingNameSpan.textContent = `${toppingType.name} 0`;
+    }
+
+    toppingButton.classList.add('toppingButtonStyle');
+    toppingButton.appendChild(toppingImg);
+    toppingButton.appendChild(toppingNameSpan);
+    toppingButtonContainer.appendChild(toppingButton);
+
+    const toppingCountContainer = document.createElement("div");
+    const toppingCountPlusButton = document.createElement("button");
+    const toppingCountMinusButton = document.createElement("button");
+    const toppingCountValue = document.createElement("span");
+
+    toppingCountContainer.classList.add('toppingCountContainer');
+    toppingCountPlusButton.classList.add('toppingCountButton');
+    toppingCountMinusButton.classList.add('toppingCountButton');
+    toppingCountValue.classList.add('toppingCountValue');
+
+    toppingCountPlusButton.textContent = "+";
+    toppingCountMinusButton.textContent = "-";
+    toppingCountValue.textContent = "1";
+
+    toppingCountContainer.appendChild(toppingCountMinusButton);
+    toppingCountContainer.appendChild(toppingCountValue);
+    toppingCountContainer.appendChild(toppingCountPlusButton);
+
+    toppingCountContainer.style.display = "none";
+
+    toppingButtonContainer.appendChild(toppingCountContainer);
+
+    let count = 0;
+
+    toppingButton.addEventListener("click", function () {
+        toppingCountContainer.style.display = "block";
+        if(count !== 1){
+            pizza.addTopping(toppingType);
+            updateButtonBuyText();
+            count = 1;
+        }
+
+        toppingCountPlusButton.addEventListener("click", function () {
+            let count = parseInt(toppingCountValue.textContent) + 1;
+            if (count <= 10) {
+                toppingCountValue.textContent = count.toString();
+                pizza.addTopping(toppingType);
+                updateButtonBuyText();
             }
+        });
+
+        toppingCountMinusButton.addEventListener("click", function () {
+            let count = parseInt(toppingCountValue.textContent) - 1;
+            if (count >= 0) {
+                toppingCountValue.textContent = count.toString();
+                pizza.removeTopping(toppingType);
+                updateButtonBuyText();
+            }
+        });
+    });
+
+    return toppingButtonContainer
+}
+
+function createPizzaSizeButtons() {
+    const pizzaSizeContainer = document.createElement("div");
+    pizzaSizeContainer.classList.add("PizzaSizeContainer");
+    const bigButton = document.createElement("button");
+    bigButton.classList.add("button_size_big")
+    const smallButton = document.createElement("button");
+    smallButton.classList.add("button_size_small");
+    bigButton.textContent = PizzaSize.Big.name;
+    smallButton.textContent = PizzaSize.Small.name;
+
+    pizzaSizeContainer.appendChild(bigButton);
+    pizzaSizeContainer.appendChild(smallButton);
+
+    bigButton.addEventListener("click", function() {
+        pizza.size = PizzaSize.Big;
+        updateButtonBuyText();
+    });
+
+    smallButton.addEventListener("click", function() {
+        pizza.size = PizzaSize.Small;
+        updateButtonBuyText();
+    });
+
+    return pizzaSizeContainer;
+}
+
+
+function createButtonBuy() {
+    const buttonBuyContainer = document.createElement("div");
+
+    const buttonBuy = document.createElement("button");
+    buttonBuy.classList.add("button_buy");
+    buttonBuyContainer.appendChild(buttonBuy);
+
+    if (pizza.type !== null) {
+        buttonBuy.textContent = `Добавить к корзину за ${pizza.calculatePrice()} (${pizza.calculateCalories()} кКалл)`;
+    } else {
+        buttonBuy.textContent = `Добавить к корзину за 0 (0 кКалл)`;
+    }
+
+    buttonBuy.setAttribute("id", "button-buy");
+
+    return buttonBuyContainer;
+}
+
+function updateButtonBuyText() {
+    const buttonBuy = document.querySelector(".button_buy");
+    if (buttonBuy) {
+        if (pizza.type === null || pizza.size === null) {
+            buttonBuy.textContent = `Добавить к корзину за 0 (0 кКалл)`;
+        } else {
+            buttonBuy.textContent = `Добавить к корзину за ${pizza.calculatePrice()} (${pizza.calculateCalories()} кКалл)`;
         }
     }
-
-    static CheeseBoard = {
-        id: "CheeseBoard",
-        name: "Сырный борт",
-        info: {
-            small: {
-                price: 150,
-                calories: 50
-            },
-            big: {
-                price: 300,
-                calories: 50
-            }
-        }
-    }
-
-    static CheddarParmesan = {
-        id: "CheddarParmesan",
-        name: "Чедер и пармезан",
-        info: {
-            small: {
-                price: 150,
-                calories: 50
-            },
-            big: {
-                price: 300,
-                calories: 50
-            }
-        }
-    }
 }
 
-class Pizza {
-    constructor(type, size) {
-        this.type = type;
-        this.size = size;
-        this.toppings = [];
-    }
+const pizzaButtonContainer = document.createElement("div");
+pizzaButtonContainer.classList.add("PizzaList");
+const pizzaButtonsWindow = [createPizzaButton(PizzaType.Margaret), createPizzaButton(PizzaType.Pepperoni), createPizzaButton(PizzaType.Bavarian)];
 
-    addTopping(topping){
-        this.toppings.push(topping);
-    }
+pizzaButtonsWindow.forEach(button => {
+    pizzaButtonContainer.appendChild(button);
+});
 
-    getToppings(){
-        return this.toppings;
+const pizzaSizeButtons = createPizzaSizeButtons();
+const toppingButtonContainer = document.createElement("div");
+toppingButtonContainer.classList.add("ToppingList");
+const toppingButtons = [createToppingButton(AdditionallyAddPizza.CreamyMozzarella), createToppingButton(AdditionallyAddPizza.CheeseBoard), createToppingButton(AdditionallyAddPizza.CheddarParmesan)];
+toppingButtons.forEach(button => {
+    if (button !== undefined) {
+        toppingButtonContainer.appendChild(button);
     }
+});
+const buttonBuy = createButtonBuy();
+updateButtonBuyText();
 
-    removeTopping(topping){
-        this.toppings = this.toppings.filter(t => t !== topping);
-    }
+const h1 = document.createElement("h1");
+h1.textContent = "Выбери размер";
+const OrderList = document.createElement("div");
+OrderList.classList.add("OrderList");
+OrderList.appendChild(h1);
+OrderList.appendChild(pizzaSizeButtons);
+OrderList.appendChild(toppingButtonContainer);
+OrderList.appendChild(buttonBuy);
 
-    getSize(){
-        return this.size.name;
-    }
+const warpPizzaWindow = document.createElement("div");
+warpPizzaWindow.classList.add("warpPizzaWindow");
+warpPizzaWindow.appendChild(pizzaButtonContainer);
+warpPizzaWindow.appendChild(OrderList);
+document.body.appendChild(warpPizzaWindow)
 
-    getType(){
-        return this.type.name;
-    }
 
-    calculatePrice(){
-        return this.type.price +
-            this.size.price +
-            this.toppings.reduce((total, currentValue) => total + currentValue.info[this.size.id === 'small' ? 'small' : 'big'].price, 0)
-    }
 
-    calculateCalories(){
-        return this.type.calories +
-            this.size.calories +
-            this.toppings.reduce((total, currentValue) => total + currentValue.info[this.size.id === 'small' ? 'small' : 'big'].calories, 0)
-    }
-}
-
-const pizza = new Pizza(PizzaType.Bavarian, PizzaSize.Big);
-pizza.addTopping(AdditionallyAddPizza.CheeseBoard)
-pizza.addTopping(AdditionallyAddPizza.CreamyMozzarella)
-pizza.removeTopping(AdditionallyAddPizza.CheeseBoard)
-console.log(pizza.calculatePrice())
