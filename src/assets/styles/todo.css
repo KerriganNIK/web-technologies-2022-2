@@ -1,0 +1,28 @@
+.todos {
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.todo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.todo__checkbox {
+    flex-shrink: 0;
+}
+
+.todo__description {
+    flex-grow: 1;
+}
+
+.todo__remove {
+    background-color: transparent;
+    border: none;
+    color: #ff0000;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+}
