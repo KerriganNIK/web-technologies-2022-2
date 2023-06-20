@@ -1,11 +1,55 @@
-@import "./global.css";
-@import "./fonts.css";
-@import "./utils.css";
-
-.test {
-    color: yellow !important;
+.product-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
-.test {
-    color: red !important;
+.product-card__image {
+    width: 250px;
+    height: 300px;
+}
+
+.product-card__name {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.product-card__description {
+    margin-top: 5px;
+}
+
+.product-card__price {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.product-card__button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.product-details__image {
+    width: 300px;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.product-details__description {
+    margin-top: 10px;
+}
+
+.product-details__price {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.review {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
 }
